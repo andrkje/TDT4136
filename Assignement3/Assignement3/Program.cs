@@ -40,7 +40,7 @@ namespace Assignement3
 
             //Algorithm a = new Algorithm.BFS;
 
-            List<Node> result = AStar.RunBFS(map, start, goal);
+            List<Node> result = ShortestPath.RunAStar(map, start, goal);
             //Visualization.PrintListOfNodes(result);
             //Visualization.PrintResultMap(map, result, start, goal);
 
