@@ -1,0 +1,5 @@
+C:\Users\AK\Documents\GitHub\TDT4136\Assignement3\Assignement3\bin\Debug\Assignement3.exe.config
+C:\Users\AK\Documents\GitHub\TDT4136\Assignement3\Assignement3\bin\Debug\Assignement3.exe
+C:\Users\AK\Documents\GitHub\TDT4136\Assignement3\Assignement3\bin\Debug\Assignement3.pdb
+C:\Users\AK\Documents\GitHub\TDT4136\Assignement3\Assignement3\obj\Debug\Assignement3.exe
+C:\Users\AK\Documents\GitHub\TDT4136\Assignement3\Assignement3\obj\Debug\Assignement3.pdb

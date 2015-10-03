@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignement3_02
+namespace Assignement3
 {
     static class Visualization
     {
@@ -77,9 +77,10 @@ namespace Assignement3_02
                     else if (map[x, y].GetCost() == 1)      // If current node is water, cost = 1, print 'r'
                         s += "r";
                     else
-                        s += ".";
+                        s += ".";               
                 }
                 s += "\n";
+                
             }
             Console.WriteLine("Map with path:\n" + s);      // Print the map
 

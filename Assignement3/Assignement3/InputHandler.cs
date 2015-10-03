@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignement3_02
+namespace Assignement3
 {
     class InputHandler
     {
