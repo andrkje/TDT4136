@@ -81,7 +81,7 @@ namespace Assignement3
                 closed.Add(currentNode);            // We're done with current node, so add it to closed
                 open = GetListSortedOnF(open);      // Sort the open list scending on f
 
-                //Visualization.PrintMapWithOpenAndClosed(map, start, goal, currentNode, open, closed);
+                Visualization.PrintMapWithOpenAndClosed(map, start, goal, currentNode, open, closed);
             }
 
             return null;    // No path was found

@@ -31,7 +31,7 @@ namespace Assignement3
                 ".........A#B";
             
             InputHandler ih = new InputHandler();
-            Node[,] map = ih.GetMapFromTextFile(urls[1, 3]);
+            Node[,] map = ih.GetMapFromTextFile(urls[0, 0]);
             //Node[,] map = ih.GetMap(map3);
             Node start = ih.GetStart();
             Node goal = ih.GetGoal();
@@ -40,7 +40,7 @@ namespace Assignement3
 
             //Algorithm a = new Algorithm.BFS;
 
-            List<Node> result = ShortestPath.RunAStar(map, start, goal);
+            List<Node> result = ShortestPath.RunBFS(map, start, goal);
             //Visualization.PrintListOfNodes(result);
             //Visualization.PrintResultMap(map, result, start, goal);
 
