@@ -55,7 +55,8 @@ namespace Assignement3
         public void SetWalkable(bool walkable) { this.walkable = walkable; }
 
         // -- ToString 
-        public override string ToString() { return "[ (" + x + "," + y + "), cost=" + cost + ", g=" + g + ", h=" + h + ", f=" + GetF() + " ]"; }
+        public override string ToString() { return "[ (" + x + "," + y + "), cost=" 
+            + cost + ", g=" + g + ", h=" + h + ", f=" + GetF() + " ]"; }
 
     }
 }

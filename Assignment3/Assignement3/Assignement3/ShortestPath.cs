@@ -36,22 +36,37 @@ namespace Assignement3
 
             while (open.Count > 0)
             {
-                Node currentNode = open.ElementAt(0);       // Set current node to the first element in the open list (which is ascending sorted on f)
+                // Set current node to the first element in the open list (which is ascending sorted on f)
+                Node currentNode = open.ElementAt(0);      
                 open.RemoveAt(0);           // Remove it from open
                 closed.Add(currentNode);    // Add it to the closed list 
 
                 if (currentNode == goal)    // If goal is found, the search is complete
                 {
                     List<Node> path = ConstructPath(currentNode);
-                    Visualization.PrintMapWithOpenAndClosedWithPath(map, path, start, goal, currentNode, open, closed);     // Print the map with the path from A to B, and show which nodes are in open (*), and closed (x)
+                    // Print the map with the path from A to B, and show which nodes are in open (*), and closed (x)
+                    //Visualization.PrintMapWithOpenAndClosedWithPath(map, path, start, goal, currentNode, open, closed);     
+                        
                     return path;            // return the path from start to goal
                 }
-                List<Node> children = GenerateChildren(currentNode);        // Genereate the children of this node (the nodes south, north, east and wes for current node
+                // Genereate the children of this node (the nodes south, north, east and wes for current node
+                List<Node> children = GenerateChildren(currentNode);        
+                        
 
                 foreach (Node child in children)
-                {                    
+                {
+
+                    if (child == goal)    // If goal is found, the search is complete
+                    {
+                        List<Node> path = ConstructPath(currentNode);
+                        // Print the map with the path from A to B, and show which nodes are in open (*), and closed (x)
+                        Visualization.PrintMapWithOpenAndClosedWithPath(map, path, start, goal, currentNode, open, closed);    
+                        return path;            // return the path from start to goal
+                    }
+                    
                     if (!child.IsWalkable())        // If child is not walkable (a obsticle or wall), skip it
                         continue;
+
 
                     double tentativeG = currentNode.GetG() + child.GetCost();       // calculate tentative g for child
                    
@@ -81,7 +96,7 @@ namespace Assignement3
                 closed.Add(currentNode);            // We're done with current node, so add it to closed
                 open = GetListSortedOnF(open);      // Sort the open list scending on f
 
-                Visualization.PrintMapWithOpenAndClosed(map, start, goal, currentNode, open, closed);
+                //Visualization.PrintMapWithOpenAndClosed(map, start, goal, currentNode, open, closed);
             }
 
             return null;    // No path was found
@@ -108,9 +123,10 @@ namespace Assignement3
             {
                 Node currentNode = open.ElementAt(0);       // Pick the first element from open list
                 open.RemoveAt(0);                           //      and remove it from the lists
-                closed.Add(currentNode);                    
+                closed.Add(currentNode);
 
-                List<Node> children = GenerateChildren(currentNode);        // Genereate the children of this node (the nodes south, north, east and wes for current node
+                // Genereate the children of this node (the nodes south, north, east and wes for current node
+                List<Node> children = GenerateChildren(currentNode);        
                 foreach (Node child in children)
                 {
                     if (!child.IsWalkable())         // If child is not walkable (a obsticle or wall), skip it
@@ -118,23 +134,21 @@ namespace Assignement3
 
                     if (child.GetG() > Int32.MaxValue-1)    // If g value of child = infinity, in other words, not touched yet
                     {
-                        child.SetG(currentNode.GetG() + child.GetCost());   // Set g (g of current node + the cost of moving from current node to child)
+                        // Set g (g of current node + the cost of moving from current node to child)
+                        child.SetG(currentNode.GetG() + child.GetCost());  
                         child.SetParent(currentNode);       // Set parent to current ndoe
                         open.Add(child);                    
                     }
                     if (child == goal)      // If the goal node is found
                     {
                         List<Node> path = ConstructPath(currentNode);
-                        Visualization.PrintMapWithOpenAndClosedWithPath(map, path, start, goal, currentNode, open, closed);
+                        //Visualization.PrintMapWithOpenAndClosedWithPath(map, path, start, goal, currentNode, open, closed);
                         return path;    // return the path from start to goal
                     }
                 }
                 //Visualization.PrintMapWithOpenAndClosed(map, start, goal, currentNode, open, closed);
             }
-
-
             return null;        // No path was found
-
         }
 
         // -- Dijkstra's:  returns list of nodes that are part of the shortest path from A to B using Dijkstra's algorithm
@@ -166,7 +180,8 @@ namespace Assignement3
                 open.RemoveAt(0);                           //      and remove it from the lists
                 closed.Add(currentNode);
 
-                List<Node> children = GenerateChildren(currentNode);        // Genereate the children of this node (the nodes south, north, east and wes for current node
+                // Genereate the children of this node (the nodes south, north, east and wes for current node
+                List<Node> children = GenerateChildren(currentNode);        
 
                 foreach (Node child in children)
                 {
@@ -179,7 +194,7 @@ namespace Assignement3
                     if (child == goal)      // If gould node is founde
                     {
                         List<Node> path = ConstructPath(currentNode);
-                        Visualization.PrintMapWithOpenAndClosedWithPath(map, path, start, goal, currentNode, open, closed);
+                        //Visualization.PrintMapWithOpenAndClosedWithPath(map, path, start, goal, currentNode, open, closed);
                         return path;        // Return path from start to goal
                     }
                 }

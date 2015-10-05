@@ -45,9 +45,7 @@ namespace Assignement3
         public static void PrintResultMap(Node[,] map, List<Node> result, Node start, Node goal)
         {
             string s = "";
-
-            result.RemoveAt(0);     // Removes the first element (goal), to show the goal as B when printed
-
+            
             for (int y = 0; y < map.GetLength(1); y++)
             {
                 for (int x = 0; x < map.GetLength(0); x++)
