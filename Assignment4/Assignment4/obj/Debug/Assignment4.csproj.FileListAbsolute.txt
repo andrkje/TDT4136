@@ -1,0 +1,12 @@
+C:\Users\AK\Documents\Visual Studio 2012\Projects\AI\Assignment4\Assignment4\Assignment4\bin\Debug\Assignment4.exe.config
+C:\Users\AK\Documents\Visual Studio 2012\Projects\AI\Assignment4\Assignment4\Assignment4\bin\Debug\Assignment4.exe
+C:\Users\AK\Documents\Visual Studio 2012\Projects\AI\Assignment4\Assignment4\Assignment4\bin\Debug\Assignment4.pdb
+C:\Users\AK\Documents\Visual Studio 2012\Projects\AI\Assignment4\Assignment4\Assignment4\obj\Debug\Assignment4.csprojResolveAssemblyReference.cache
+C:\Users\AK\Documents\Visual Studio 2012\Projects\AI\Assignment4\Assignment4\Assignment4\obj\Debug\Assignment4.exe
+C:\Users\AK\Documents\Visual Studio 2012\Projects\AI\Assignment4\Assignment4\Assignment4\obj\Debug\Assignment4.pdb
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4\Assignment4\bin\Debug\Assignment4.exe.config
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4\Assignment4\obj\Debug\Assignment4.exe
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4\Assignment4\obj\Debug\Assignment4.pdb
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4\Assignment4\bin\Debug\Assignment4.exe
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4\Assignment4\bin\Debug\Assignment4.pdb
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4\Assignment4\obj\Debug\Assignment4.csprojResolveAssemblyReference.cache
