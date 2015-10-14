@@ -1,0 +1,6 @@
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4_2\Assignment4_2\bin\Debug\Assignment4_2.exe.config
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4_2\Assignment4_2\bin\Debug\Assignment4_2.exe
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4_2\Assignment4_2\bin\Debug\Assignment4_2.pdb
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4_2\Assignment4_2\obj\Debug\Assignment4_2.csprojResolveAssemblyReference.cache
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4_2\Assignment4_2\obj\Debug\Assignment4_2.exe
+C:\Users\AK\Documents\GitHub\TDT4136\Assignment4_2\Assignment4_2\obj\Debug\Assignment4_2.pdb

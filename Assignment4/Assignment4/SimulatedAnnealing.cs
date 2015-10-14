@@ -11,7 +11,16 @@ namespace Assignment4
     {
         //private static int m, n, k;
 
-        public static State Run(Problem problem, Schedule schedule)
+        public static State RunExercise(State startingPoint)
+        {
+            double T
+
+
+            return new State();  // TEMP
+        }
+
+
+        public static State RunBook(Problem problem, Schedule schedule)
         {
             /* Currently not in use, might be moved to the Problem class..?
             m = 0;
@@ -36,7 +45,7 @@ namespace Assignment4
 
                 double deltaE = next.Value - current.Value;         // ΔE is calulated
 
-                if (deltaE > 0)
+                if (deltaE > 0) 
                 {
                     current = next;
                 }
