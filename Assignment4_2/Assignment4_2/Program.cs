@@ -16,11 +16,14 @@ namespace Assignment4_2
 
 
             Board b = new Board(M, N, K);
-            Console.WriteLine(b);
-            Console.WriteLine("Objective function: " + b.ObjectiveFunction());
+            Node start = new Node(b);
+            SimulatedAnnealing.Run(start, M*K);
+
+            //Console.WriteLine(b);
+            //Console.WriteLine("Objective function: " + b.ObjectiveFunction());
                
-
-
+            //Node n = new Node();
+            //Console.WriteLine(n.ObjectiveFunctionValue);
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadLine();

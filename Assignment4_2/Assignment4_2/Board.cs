@@ -8,8 +8,10 @@ namespace Assignment4_2
 {
     class Board
     {
-        int[][] board;
-        int K, M, N;
+        public int[][] EggCarton { get; set; }
+        public int K { get; set; }
+        public int M { get; set; }
+        public int N { get; set; }
 
         public Board(int m, int n, int k)
         {
@@ -17,23 +19,31 @@ namespace Assignment4_2
             N = n;
             K = k;
 
-            board = GenerateBoard(M, N);
-            board[0][0] = 1;
-            board[0][2] = 1;
-            board[1][1] = 1;
-            board[1][4] = 1;
-            board[2][1] = 1;
-            board[2][3] = 1;
-            board[3][0] = 1;
-            board[3][4] = 1;
-            board[4][2] = 1;
-            board[4][3] = 1;
+            EggCarton = GenerateBoard(M, N);
+            /*
+            EggCarton[0][0] = 1;
+            EggCarton[0][2] = 1;
+            EggCarton[1][1] = 1;
+            EggCarton[1][4] = 1;
+            EggCarton[2][1] = 1;
+            EggCarton[2][3] = 1;
+            EggCarton[3][0] = 1;
+            EggCarton[3][4] = 1;
+            EggCarton[4][2] = 1;
+            EggCarton[4][3] = 1;
+            */
 
-            board[3][3] = 1;
-            board[3][2] = 1;
+            EggCarton[3][3] = 1;
+            /*
+            EggCarton[0][1] = 1;
+            EggCarton[2][0] = 1;
+            EggCarton[1][3] = 1;
+            EggCarton[3][2] = 1;
+             */
+            
         }
 
-        private int[][] GenerateBoard(int m, int n)
+        public int[][] GenerateBoard(int m, int n)
         { 
             int[][] board = new int[m][];
 
@@ -64,21 +74,46 @@ namespace Assignment4_2
             {
                 for (int j = 0; j < N; j++)
                 {
-                    if (board[i][j] == 1)
+                    if (EggCarton[i][j] == 1)
                        violatedRules += CountViolations(i, j);                    
                 }
             }
+            // Max antall egg = M*K, gitt kvadratisk (M=N)
+            //Console.WriteLine("violatet rules: " + violatedRules);
             return (CountEggs() / (Math.Pow((violatedRules+1), 2) ));     // +1 to avoid deviding by 0. !POW!! Skummel ting!
         }
 
-        private int CountEggs()
+        public bool IsValidBoard()
+        {
+            double violatedRules = 0;
+
+            for (int i = 0; i < M; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    if (EggCarton[i][j] == 1)
+                        violatedRules += CountViolations(i, j);
+                }
+            }
+            if (violatedRules > 0)
+                return false;
+            else
+                return true;
+        }
+
+        public void GenerateRandomBoard()
+        { 
+            
+        }
+
+        public int CountEggs()
         {
             int count = 0;
             for (int i = 0; i < M; i++)
             {
                 for (int j = 0; j < N; j++)
                 {
-                    if (board[i][j] == 1)
+                    if (EggCarton[i][j] == 1)
                         count++;
                 }
             }
@@ -89,13 +124,13 @@ namespace Assignment4_2
         {
             // Trekke K fra violations for å finne antall noder som er feilplasert
 
-            Console.WriteLine("________________");
+           // Console.WriteLine("________________");
             int violations = 0;
             // Vertical count
             int count = 0;
             for (int i = 0; i < M; i++)
             {
-                if (board[i][n] == 1)
+                if (EggCarton[i][n] == 1)
                     count++;
             }
             if (count > K)
@@ -105,7 +140,7 @@ namespace Assignment4_2
             count = 0;
             for (int i = 0; i < N; i++)
             {
-                if (board[m][i] == 1)
+                if (EggCarton[m][i] == 1)
                     count++;
             }
             if (count > K)
@@ -117,8 +152,8 @@ namespace Assignment4_2
             int startColumn = n;
             while ((startRow >= 0) && (startColumn+1 <= N))
             {
-                Console.WriteLine("row: " + startRow + ", col: " + startColumn);
-                if (board[startRow][startColumn] == 1)
+                //Console.WriteLine("row: " + startRow + ", col: " + startColumn);
+                if (EggCarton[startRow][startColumn] == 1)
 	            {
 		            count++;
 	            }
@@ -129,7 +164,7 @@ namespace Assignment4_2
             startColumn = n;
             while ((startRow+1 <= M) && (startColumn >= 0))
 	        {
-                if (board[startRow][startColumn] == 1)
+                if (EggCarton[startRow][startColumn] == 1)
                 {
                     count++;
                 }
@@ -145,8 +180,8 @@ namespace Assignment4_2
             startColumn = n;
             while ((startRow >= 0) && (startColumn >= 0))
             {
-                Console.WriteLine("row: " + startRow + ", col: " + startColumn);
-                if (board[startRow][startColumn] == 1)
+                //Console.WriteLine("row: " + startRow + ", col: " + startColumn);
+                if (EggCarton[startRow][startColumn] == 1)
                 {
                     count++;
                 }
@@ -157,7 +192,7 @@ namespace Assignment4_2
             startColumn = n;
             while ((startRow + 1 <= M) && (startColumn + 1 <= N))
             {
-                if (board[startRow][startColumn] == 1)
+                if (EggCarton[startRow][startColumn] == 1)
                 {
                     count++;
                 }
@@ -174,15 +209,17 @@ namespace Assignment4_2
         public override string ToString()
         {
             string s = "";
-            for (int i = 0; i < board.Length; i++)
+            for (int i = 0; i < EggCarton.Length; i++)
             {
-                for (int j = 0; j < board[i].Length; j++)
+                for (int j = 0; j < EggCarton[i].Length; j++)
                 {
-                    s += "[" + board[i][j] + "]";
+                    s += "[" + EggCarton[i][j] + "]";
                 }
                 s += "\n";
             }
             return s;
         }
+
+        
     }
 }
